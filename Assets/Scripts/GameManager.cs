@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -9,8 +10,8 @@ public class GameManager : MonoBehaviour {
 
 	public GameManager instance;
 
-
-	public int noodlesCount = 2;
+	public Text scoreText;
+	public int noodlesCount = 10;
 
 	public float noodlesDistance = 0.75f;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		CheckSingliton ();
+		scoreText = GameObject.Find ("Score Text").GetComponent<Text>();
 	}
 
 	// Use this for initialization
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour {
 		if (currentIndex<noodlesCount) {
 			noodles [currentIndex].GetComponent<Noodle>().FireTheNoodle();
 			currentIndex++;
+			scoreText.text =""+ currentIndex;
 		}
 
 	}

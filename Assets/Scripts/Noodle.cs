@@ -33,6 +33,14 @@ public class Noodle : MonoBehaviour {
 			gameObject.transform.SetParent (target.transform);
 		}
 
+		if (target.gameObject.tag=="Pin") {
+			Time.timeScale = 0;
+
+			Debug.Log (target.gameObject.name);
+		}
+
+
+
 	}
 
 
