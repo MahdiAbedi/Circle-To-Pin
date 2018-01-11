@@ -9,18 +9,17 @@ public class Noodle : MonoBehaviour {
 
 	private Rigidbody2D myBody;
 
-	public float ShootSpeed = 2f;
+	public float ShootSpeed = 30f;
+
+	public Noodle instance;
 
 	// Use this for initialization
 	void Awake () {
+		
 		noodleBody.SetActive (false);
 		myBody = GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	public void FireTheNoodle(){
 		myBody.isKinematic = false;
@@ -35,4 +34,8 @@ public class Noodle : MonoBehaviour {
 		}
 
 	}
+
+
+
+
 }
